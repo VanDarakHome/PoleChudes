@@ -1,53 +1,32 @@
-while True:
-    slovarus = list()
-    countgame = 1
-    slovarus.append('Гидроэлектростанция')
-    slovarus.append('Оториноларинголог')
-    slovarus.append('Электрокардиографический')
-    slovarus.append('Электронейтральный')
-    slovarus.append('Достопримечательность')
-    print('Hello! This is game: field of miracles!')
-    print("Now you can change language to Russian. Type 1 if you need it.")
-    print('1) Continue with English language')
-    print("2) Change my language to Russian")
-    language = input()
-    while language != '1' and language != '2':
-        print("Please, make a choice")
-        language = input()
-    if language == '1':
-        print('Ok. Do you want to play?')
-        print("1) Yes")
-        print("2) No")
-        choice = input()
-        while choice != '1' and choice != '2':
-            print('Bro, please write 1 or 2')
-            choice = input()
-        if choice == '1':
-            break
-        else:
-            countgame = 1
-# -----------------------------------------------------
-    if language == '1':
-        print("Do you want to play one more time?")
-        print("1) Yes")
-        print("2) No")
-        end = input()
-        while end != '1' and end != '2':
-            print("Please, make a choice")
-            end = input()
-        if end == '1':
-            continue
-        else:
-            break
-    if language == '2':
-        print("Хотите ли вы сыграть ещё раз?")
-        print("1) Да")
-        print("2) Нет")
-        end = input()
-        while end != '1' and end != '2':
-            print("Введи 1 или 2")
-            end = input()
-        if end == '1':
-            continue
-        else:
-            break
+from random import choice
+WORDS = ("собака", "игра", "программирование", 'гидроэлектростанция', 'оториноларинголог', 'электрокардиографический', 'электронейтральный', 'достопримечательность')
+word = choice(WORDS)
+word_len = "-" * len(word)
+mistakes = 0
+x = list()
+alphavit = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я',]
+while word_len != word:
+    print("\nВы использовали следующие буквы:\n", x)
+    print("\nНа данный момент слово выглядит так:\n", word_len)
+    print("\nВ слове все буквы русские, маленькие(не заглавные)")
+    answer = input()
+    while answer not in alphavit:
+        print("Такой буквы нет в алфавите!")
+        answer = input()
+    while answer in x:
+        print("Вы уже вводили букву", answer)
+        answer = input("Введите свое предположение: ")
+    x.append(answer)
+    if answer in word:
+        print("\nДа!", answer, "есть в слове!")
+        new = ""
+        for i in range(len(word)):
+            if answer == word[i]:
+                new += answer
+            else:
+                new += word_len[i]
+        word_len = new
+    else:
+        print("\nИзвините, буквы \"" + answer + "\" нет в слове.")
+        mistakes += 1
+print("Поздравляю! Вы смогли угадать слово! Ваше количество ошибок: " + mistakes)
