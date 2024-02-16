@@ -6,8 +6,8 @@ mistakes = 0
 x = list()
 alphavit = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я',]
 while word_len != word:
-    print("\nВы использовали следующие буквы:\n", x)
-    print("\nНа данный момент слово выглядит так:\n", word_len)
+    print("\nВы использовали буквы:\n", x)
+    print("\nВаше загаданное слово:\n", word_len)
     print("\nВ слове все буквы русские, маленькие(не заглавные)")
     answer = input()
     while answer not in alphavit:
@@ -15,10 +15,10 @@ while word_len != word:
         answer = input()
     while answer in x:
         print("Вы уже вводили букву", answer)
-        answer = input("Введите свое предположение: ")
+        answer = input("Введите вашу букву: ")
     x.append(answer)
     if answer in word:
-        print("\nДа!", answer, "есть в слове!")
+        print("\nПоздравляю!", answer, "есть в слове на этих местах!")
         new = ""
         for i in range(len(word)):
             if answer == word[i]:
