@@ -1,4 +1,3 @@
-from random import choice
 game = 0
 win_or_not = 0
 print("Hello! This is game 'The field of wonders'. If you need to read rules write '1', if not: write '2'")
@@ -119,7 +118,7 @@ if language == '1':  # Русский язык
         print("Выбери себе сложность")
         BIG_CHOICE = input()
     if BIG_CHOICE == '1':
-        WORDS = ("яма", "нос", "рот", "глаз", "волк", "рыба", "лужа", "краб",
+        WORDS = {"яма", "нос", "рот", "глаз", "волк", "рыба", "лужа", "краб",
                  "вход", "яйцо", "песок", "силач", "пирог", "сахар",
                  "лимон", "берег", "горка", "тесто", "экран", "замок",
                  "кошка", "штаны", "вечер", "ветер", "ложка", "палка", "книга",
@@ -162,8 +161,8 @@ if language == '1':  # Русский язык
                  'превысокомногорассмотрительствующий',
                  'бесконечность', 'умиротворение', 'перпендикуляр',
                  'электропроводность',
-                 'благовоспитанность', 'усовершенствованье')
-        word = choice(WORDS)
+                 'благовоспитанность', 'усовершенствованье'}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         x = list()
@@ -230,12 +229,12 @@ if language == '1':  # Русский язык
             print("Ваше количество ошибок:", mistakes)
     elif BIG_CHOICE == '2':
         print("Напоминаю у вас 13 прав на ошибку")
-        WORDS = ("яма", "нос", "рот", "глаз", "волк", "рыба", "лужа", "краб", "вход", "яйцо", "песок", "силач",
+        WORDS = {"яма", "нос", "рот", "глаз", "волк", "рыба", "лужа", "краб", "вход", "яйцо", "песок", "силач",
                  "пирог", "сахар", "лимон", "берег", "горка", "тесто", "экран", "замок", "кошка", "штаны", "вечер",
                  "ветер", "ложка", "палка", "книга", "батон", "земля", "масло", "волна", "птица", "пятно", "ведро",
                  "дождь", "шапка", "поиск", "башня", "щипцы", "закат", "пауза", "песня", "сдача", "полка", "билет",
-                 "халва", "кочка", "петля", "осень")
-        word = choice(WORDS)
+                 "халва", "кочка", "петля", "осень"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         max_mistakes = 13
@@ -303,7 +302,7 @@ if language == '1':  # Русский язык
             print("Ваше количество ошибок:", mistakes, 'из 13 разрешённых')
     elif BIG_CHOICE == '3':
         print("Напоминаю у вас 10 прав на ошибку")
-        WORDS = ("ладонь", "король", "опушка", "куртка", "сказка", "звезда", "пряник", "дружба", "секрет",
+        WORDS = {"ладонь", "король", "опушка", "куртка", "сказка", "звезда", "пряник", "дружба", "секрет",
                  "музыка", "свинья", "камень", "молния", "дерево", "стекло", "минута", "правда", "сердце",
                  "балкон", "стакан", "колесо", "железо", "картон", "грибок", "корова", "остров", "машина",
                  "голова", "радуга", "прятки", "сторож", "защита", "павлин", "рассол", "журнал", "творог",
@@ -317,8 +316,8 @@ if language == '1':  # Русский язык
                  "картошка", "раковина", "разговор", "прогулка", "сосулька", "картинка", "прихожая", "скатерть",
                  "мармелад", "карамель", "квартира", "непогода", "карточка", "лестница", "переулок", "заставка",
                  "микрофон", "прохожий", "скарабей", "телескоп", "угощение", "пришелец", "доставка", "баклажан",
-                 "дикобраз", "барбарис", "работник", "кристалл", "черепаха")
-        word = choice(WORDS)
+                 "дикобраз", "барбарис", "работник", "кристалл", "черепаха"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         max_mistakes = 10
@@ -387,11 +386,11 @@ if language == '1':  # Русский язык
             print("Ваше количество ошибок:", mistakes, 'из 10 разрешённых')
     elif BIG_CHOICE == '4':
         print("Напоминаю у вас 8 прав на ошибку")
-        WORDS = ("телевизор", "покрывало", "невидимка", "занавеска", "строитель", "бульдозер",
+        WORDS = {"телевизор", "покрывало", "невидимка", "занавеска", "строитель", "бульдозер",
                  "пластилин", "указатель", "градусник", "наволочка", "квитанция", "футболист",
                  "велосипед", "подоконник", "аттракцион", "экскаватор", "троллейбус", "дрессировка",
-                 "дельфинарий", "перекрёсток", "тираннозавр", "сигнализация")
-        word = choice(WORDS)
+                 "дельфинарий", "перекрёсток", "тираннозавр", "сигнализация"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         max_mistakes = 8
@@ -542,7 +541,7 @@ else:
         print("Please choose your game difficulty")
         BIG_CHOICE = input()
     if BIG_CHOICE == '1':
-        WORDS = ("fox", "egg", "dog", "cat", "foot", "hand", "head", "nose", "card", "lane", "news",
+        WORDS = {"fox", "egg", "dog", "cat", "foot", "hand", "head", "nose", "card", "lane", "news",
                  "song", "frog", "cape", "bike", "hook", "wave", "mouse", "noise", "diver", "tower",
                  "arrow", "pause", "treat", "alien", "shelf", "joker", "armor", "halva", "staff", "puppy",
                  "search", "collar", "police", "bottle", "ladder", "sunset", "silver", "basket", "change",
@@ -552,8 +551,8 @@ else:
                  "unknown", "jackpot", "watchman", "training", "entrance", "magazine", "shepherd",
                  "delivery", "interest", "football", "marmalade", "apartment", "telescope", "excavator",
                  "attraction", "protection", "crossroads", "pillowcase", "microphone", "trolleybus",
-                 "transcript", "thermometer", "screensaver", "tyrannosaur", "dolphinarium")
-        word = choice(WORDS)
+                 "transcript", "thermometer", "screensaver", "tyrannosaur", "dolphinarium"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         x = list()
@@ -620,10 +619,10 @@ else:
             print("Your number of errors:", mistakes)
     elif BIG_CHOICE == '2':
         print("You have 13 attempts to guess the word")
-        WORDS = ("fox", "egg", "dog", "cat", "foot", "hand", "head", "nose", "card", "lane", "news",
+        WORDS = {"fox", "egg", "dog", "cat", "foot", "hand", "head", "nose", "card", "lane", "news",
                  "song", "frog", "cape", "bike", "hook", "wave", "mouse", "noise", "diver", "tower",
-                 "arrow", "pause", "treat", "alien", "shelf", "joker", "armor", "halva", "staff", "puppy")
-        word = choice(WORDS)
+                 "arrow", "pause", "treat", "alien", "shelf", "joker", "armor", "halva", "staff", "puppy"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         max_mistakes = 13
@@ -691,15 +690,15 @@ else:
             print("Your number of errors:", mistakes, 'out of 13 possible.')
     elif BIG_CHOICE == '3':
         print("You have 10 attempts to guess the word")
-        WORDS = ("search", "collar", "police", "bottle", "ladder", "sunset",
+        WORDS = {"search", "collar", "police", "bottle", "ladder", "sunset",
                  "silver", "basket", "change", "flakes", "letter", "ticket",
                  "worker", "hummer", "turtle", "autumn", "galaxy", "matrix",
                  "subway", "zodiac", "zombie", "joking", "rainbow", "leopard",
                  "caramel", "battery", "peacock", "receipt", "microbe", "iceberg",
                  "plastic", "tuesday", "example", "crystal", "unknown", "jackpot",
                  "watchman", "training", "entrance", "magazine", "shepherd",
-                 "delivery", "interest", "football")
-        word = choice(WORDS)
+                 "delivery", "interest", "football"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         max_mistakes = 10
@@ -767,11 +766,11 @@ else:
             print("Your number of errors:", mistakes, 'out of 10 possible.')
     else:
         print("You have 8 attempts to guess the word")
-        WORDS = ("marmalade", "apartment", "telescope", "excavator",
+        WORDS = {"marmalade", "apartment", "telescope", "excavator",
                  "attraction", "protection", "crossroads", "pillowcase",
                  "microphone", "trolleybus", "transcript", "thermometer",
-                 "screensaver", "tyrannosaur", "dolphinarium")
-        word = choice(WORDS)
+                 "screensaver", "tyrannosaur", "dolphinarium"}
+        word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
         max_mistakes = 8
