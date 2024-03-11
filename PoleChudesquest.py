@@ -389,7 +389,9 @@ if language == '1':  # Русский язык
         WORDS = {"телевизор", "покрывало", "невидимка", "занавеска", "строитель", "бульдозер",
                  "пластилин", "указатель", "градусник", "наволочка", "квитанция", "футболист",
                  "велосипед", "подоконник", "аттракцион", "экскаватор", "троллейбус", "дрессировка",
-                 "дельфинарий", "перекрёсток", "тираннозавр", "сигнализация"}
+                 "дельфинарий", "перекрёсток", "тираннозавр", "сигнализация", 'космополит',
+                 'аффирмация', 'публикация', 'стипендия', 'стипендиат', 'префектура',
+                 'гармонизация', 'рекомбинация'}
         word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
@@ -459,10 +461,15 @@ if language == '1':  # Русский язык
             print("Ваше количество ошибок:", mistakes, 'из 8 разрешённых')
     else:
         print("Напоминаю у вас 6 прав на ошибку")
-        WORDS = ('администрация', 'электронейтральный', 'оториноларинголог', 'программирование',
+        WORDS = {'администрация', 'электронейтральный', 'оториноларинголог', 'программирование',
                  'гидроэлектростанция', 'достопримечательность', 'рентгеноэлектрокардиографический',
                  'превысокомногорассмотрительствующий', 'бесконечность', 'умиротворение',
-                 'перпендикуляр', 'электропроводность', 'благовоспитанность', 'усовершенствованье')
+                 'перпендикуляр', 'электропроводность', 'благовоспитанность', 'усовершенствование',
+                 'красногвардеец', 'главнокомандующий', 'кристаллизация', 'хроматография',
+                 'аудиопроигрыватель', 'антипатриотический', 'безответственность',
+                 'воспрепятствование', 'видеосинхронизатор', 'бронховезикулярный',
+                 'человеконенавистничество', 'высокопревосходительство', 'водогрязеторфопарафинолечение',
+                 'экспериментатор', 'самообразование', 'невмешательство'}
         word = choice(WORDS)
         word_len = "*" * len(word)
         mistakes = 0
@@ -535,7 +542,7 @@ else:
     print("\n1)Practice(you have infinity attempts, the word is random)")
     print("2) Easy(you have only 13 attempts to guess the word, there are 3 to 5 characters in a word)")
     print("3) Normal(you have only 10 attempts to guess the word, there are 6 to 8 characters in a word)")
-    print("4) Hard(you have only 8 attempts to guess the word, there are 9 to 12 characters in a word)")
+    print("4) Hard(you have only 8 attempts to guess the word, there are 9 to 999999 characters in a word)")
     BIG_CHOICE = input()
     while BIG_CHOICE != '1' and BIG_CHOICE != '2' and BIG_CHOICE != '3' and BIG_CHOICE != '4':
         print("Please choose your game difficulty")
@@ -769,7 +776,8 @@ else:
         WORDS = {"marmalade", "apartment", "telescope", "excavator",
                  "attraction", "protection", "crossroads", "pillowcase",
                  "microphone", "trolleybus", "transcript", "thermometer",
-                 "screensaver", "tyrannosaur", "dolphinarium"}
+                 "screensaver", "tyrannosaur", "dolphinarium", 'transcript',
+                 'stronghold'}
         word = WORDS.pop()
         word_len = "*" * len(word)
         mistakes = 0
