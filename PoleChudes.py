@@ -845,11 +845,27 @@ while True:
             else:
                 print("Congratulations! Were you able to guess the word:", word)
                 print("Your number of errors:", mistakes, 'out of 8 possible.')
-    if language = '1':  # russian
-        print('Хотите сыграить ещё раз?')
+    if language == '1':  # russian
+        print('Хотите сыграть ещё раз?')
         print("1) Да")
         print("2) Нет")
         vibor_goda = input()
         while vibor_goda != '1' and vibor_goda != '2':
             print('Определись с выбором!')
             vibor_goda = input()
+        if vibor_goda == '1':
+            continue
+        else:
+            break
+    else:
+        print("Do you want to play one more time?")
+        print("1) Yes")
+        print("2) No")
+        vibor_goda = input()
+        while vibor_goda != '1' and vibor_goda != '2':
+            print('Please write 1 or 2')
+            vibor_goda = input()
+        if vibor_goda == '1':
+            continue
+        else:
+            break
